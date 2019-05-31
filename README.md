@@ -1,4 +1,4 @@
-# !micronaut-realworld-example-app
+# ![RealWorld Example App](logo.png)
 
 > ### micronaut + MyBatis codebase containing real world examples  (auth so far) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
 
