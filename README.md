@@ -1,1 +1,0 @@
-# micronaut-realworld-example-app
