@@ -1,0 +1,85 @@
+openapi: 3.0.1
+paths:
+  /articles:
+    get:
+      description: "TODO: a. Change it to real article\n TODO: b. test JWT authentication\
+        \ for now, Tested? \n TODO: c. How to save that in database + create table"
+      operationId: articles
+      parameters: []
+      responses:
+        default:
+          description: 'articles list, '
+          content:
+            application/json:
+              schema:
+                type: string
+  /articles/dummy:
+    get:
+      description: It's a dummy api.
+      operationId: dummy
+      parameters: []
+      responses:
+        default:
+          description: Return the User koolak82 profile, it's all hardcoded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserData'
+  /users:
+    post:
+      operationId: save
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserSaveCommand'
+        required: true
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserData'
+  /:
+    get:
+      operationId: index
+      parameters: []
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: string
+components:
+  schemas:
+    UserData:
+      type: object
+      properties:
+        bio:
+          type: string
+        email:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        username:
+          type: string
+    UserSaveCommand:
+      type: object
+      properties:
+        bio:
+          type: string
+        email:
+          minLength: 1
+          type: string
+          format: email
+        image:
+          type: string
+        password:
+          minLength: 1
+          type: string
+        username:
+          minLength: 1
+          type: string

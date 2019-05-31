@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: io.micronaut
+---
+testFramework: junit
+sourceLanguage: java
